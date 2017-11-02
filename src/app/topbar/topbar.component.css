@@ -1,0 +1,31 @@
+h1#title {
+  text-align: center;
+  color: white;
+  font-size: 400%;
+}
+
+div#header {
+  margin-top: 0;
+  background-color: deeppink;
+  padding: 0;
+}
+
+h1#title {
+  vertical-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#menu {
+  float: left;
+  padding-left: 10px
+}
+
+.menu-bar {
+  list-style: none;
+  padding-left: 0;
+  background-color: white;
+  width: 45px;
+  height: 7px;
+  margin-bottom: 5px;
+}
