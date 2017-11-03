@@ -9,32 +9,24 @@ import {Subject} from 'rxjs/Subject';
   providers: [ConnectMonthService]
 })
 export class TopbarComponent implements OnInit {
-  public monthIdx: number = 0;
-  lastClicked: boolean = false;
-  months: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  public monthIdx = 0;
+  months: string[] =
+    ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   leftRight$ = new Subject<boolean>();
 
   constructor(private _shareMonth: ConnectMonthService) {
-      this.leftRight$.subscribe(
-        data => {
-          console.log(data);
-          if (data) {
-            this.monthIdx = ++this.monthIdx % this.months.length;
-          } else {
-            this.monthIdx = this.monthIdx < 1? this.months.length - 1: --this.monthIdx;
-          }
-
-          this._shareMonth.publishData(this.monthIdx);
+    this.leftRight$.subscribe(
+      data => {
+        console.log(data);
+        if (data) {
+          this.monthIdx = ++this.monthIdx % this.months.length;
+        } else {
+          this.monthIdx = this.monthIdx < 1 ? this.months.length - 1 : --this.monthIdx;
         }
-      )
-  }
 
-  public decre() {
-    this.leftRight$.next(false);
-  }
-
-  public incre() {
-    this.leftRight$.next(true);
+        this._shareMonth.publishData(this.monthIdx);
+      }
+    );
   }
 
   ngOnInit() {
