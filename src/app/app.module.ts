@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { DaysComponent } from './days/days.component';
+import { DayComponent } from './day/day.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     TopbarComponent,
-    DaysComponent
+    DaysComponent,
+    DayComponent,
   ],
   imports: [
     BrowserModule
