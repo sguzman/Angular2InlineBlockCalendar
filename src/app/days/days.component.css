@@ -7,12 +7,21 @@
   background-color: lightblue;
 }
 
+
 h4 {
   margin-top: 0;
   margin-left: 5px;
 }
 
 app-day.days.even {
+  background-color: cornflowerblue;
+}
+
+app-day.days.even:hover {
+  background-color: lightblue;
+}
+
+app-day.days.odd:hover {
   background-color: cornflowerblue;
 }
 
