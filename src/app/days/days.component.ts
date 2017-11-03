@@ -38,7 +38,6 @@ export class DaysComponent implements OnInit {
   }
 
   logMessage(i: number) {
-    console.log(this.monthIdx, i);
     const str = this.jotDown[[this.monthIdx, i].toString()] || '';
 
     this.jotDown[[this.monthIdx, i].toString()] = str + '\n' + new Date().toString()  + ' - ' + window.prompt(str);
