@@ -10,5 +10,10 @@
   <main class="days"><h4>Saturday</h4></main>
 </header>
 <main *ngFor="let num of createRange(daysOfMonth); let i of index">
-  <app-day class="days" [text]="i"></app-day>
+  <div *ngIf="i % 2; else elseBlock">
+    <app-day class="days even" [text]="i"></app-day>
+  </div>
+  <ng-template #elseBlock>
+    <app-day class="days odd" [text]="i" [style.background-color]="lightblue"></app-day>
+  </ng-template>
 </main>
