@@ -1,5 +1,14 @@
 <h1>{{months[monthIdx]}}'s index: {{monthIdx}}</h1>
 <h2>Number of days in {{months[monthIdx]}} is {{daysOfMonth}}</h2>
-<div *ngFor="let num of createRange(daysOfMonth); let i of index">
+<header>
+  <main class="days"><h4>Sunday</h4></main>
+  <main class="days"><h4>Monday</h4></main>
+  <main class="days"><h4>Tuesday</h4></main>
+  <main class="days"><h4>Wednesday</h4></main>
+  <main class="days"><h4>Thursday</h4></main>
+  <main class="days"><h4>Friday</h4></main>
+  <main class="days"><h4>Saturday</h4></main>
+</header>
+<main *ngFor="let num of createRange(daysOfMonth); let i of index">
   <app-day class="days" [text]="i"></app-day>
-</div>
+</main>

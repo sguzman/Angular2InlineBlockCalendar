@@ -1,4 +1,24 @@
-app-day.days {
+.days {
   display: inline-block;
   float: left;
+  width: 14.285714285714286%;
+  height: 100px;
+  color: white;
+}
+
+h4 {
+  margin-top: 0;
+}
+
+app-day.days {
+  background-color: lightblue;
+  border: #003434 thin;
+}
+
+main.days {
+  background-color: lightseagreen;
+}
+
+main.days:nth-child(odd) {
+  background-color: rebeccapurple;
 }
