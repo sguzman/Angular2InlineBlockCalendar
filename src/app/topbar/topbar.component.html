@@ -1,7 +1,7 @@
 <div id="header">
   <h1 id="title">
-    <span id="left-arrow" class="arrows" (click)="incre()">&lt;</span>
+    <span id="left-arrow" class="arrows" (click)="leftRight$.next(false);">&lt;</span>
     <span id="title-title">{{months[monthIdx]}}</span>
-    <span id="right-arrow" class="arrows" (click)="decre()">&gt;</span>
+    <span id="right-arrow" class="arrows" (click)="leftRight$.next(true);">&gt;</span>
   </h1>
 </div>
