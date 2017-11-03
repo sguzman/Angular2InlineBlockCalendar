@@ -1,2 +1,5 @@
 <h1>{{months[monthIdx]}}'s index: {{monthIdx}}</h1>
-<h2>Number of days in {{months[monthIdx]}} is {{daysInMonth(monthIdx + 1)}}</h2>
+<h2>Number of days in {{months[monthIdx]}} is {{daysOfMonth}}</h2>
+<div *ngFor="let num of createRange(daysOfMonth); let i of index">
+  <app-day class="days" [text]="i"></app-day>
+</div>

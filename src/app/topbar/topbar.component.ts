@@ -17,7 +17,6 @@ export class TopbarComponent implements OnInit {
   constructor(private _shareMonth: ConnectMonthService) {
     this.leftRight$.subscribe(
       data => {
-        console.log(data);
         if (data) {
           this.monthIdx = ++this.monthIdx % this.months.length;
         } else {

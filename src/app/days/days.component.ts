@@ -12,13 +12,23 @@ export class DaysComponent implements OnInit {
   months: string[] =
     ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
+  daysOfMonth: number = 31;
+
   constructor(private _shareMonth: ConnectMonthService) {
     ConnectMonthService.caseNumber$.subscribe(
       data => {
-        console.log(`Receiving data in days component: ${data}`);
         this.monthIdx = data;
+        this.daysOfMonth = this.daysInMonth(data + 1);
       }
     );
+  }
+
+  createRange(number){
+    let items: number[] = [];
+    for (let i = 1; i <= number; i++){
+      items.push(i);
+    }
+    return items;
   }
 
   daysInMonth(month, year = 2017) {
