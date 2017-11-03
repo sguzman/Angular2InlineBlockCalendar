@@ -4,6 +4,7 @@
   width: 14.285714285714286%;
   height: 100px;
   color: white;
+  background-color: lightblue;
 }
 
 h4 {
@@ -11,9 +12,8 @@ h4 {
   margin-left: 5px;
 }
 
-app-day.days {
-  background-color: lightblue;
-  border: #003434 thin;
+app-day.days.even {
+  background-color: cornflowerblue;
 }
 
 main.days {
