@@ -9,9 +9,9 @@
 </header>
 <main *ngFor="let num of createRange(daysOfMonth); let i of index">
   <div *ngIf="i % 2; else elseBlock">
-    <app-day class="days even" [text]="i"></app-day>
+    <app-day (click)="logMessage(i)" class="days even" [text]="i"></app-day>
   </div>
   <ng-template #elseBlock>
-    <app-day class="days odd" [text]="i" [style.background-color]="lightblue"></app-day>
+    <app-day (click)="logMessage(i)" class="days odd" [text]="i" [style.background-color]="lightblue"></app-day>
   </ng-template>
 </main>

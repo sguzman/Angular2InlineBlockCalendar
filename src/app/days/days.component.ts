@@ -8,11 +8,13 @@ import {ConnectMonthService} from '../connect-month.service';
   providers: [ConnectMonthService]
 })
 export class DaysComponent implements OnInit {
-  public monthIdx: number = 0;
+  public monthIdx = 0;
   months: string[] =
     ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  daysOfMonth: number = 31;
+  daysOfMonth = 31;
+
+  jotDown: any = {};
 
   constructor(private _shareMonth: ConnectMonthService) {
     ConnectMonthService.caseNumber$.subscribe(
@@ -24,7 +26,7 @@ export class DaysComponent implements OnInit {
   }
 
   createRange(number){
-    let items: number[] = [];
+    const items: number[] = [];
     for (let i = 1; i <= number; i++){
       items.push(i);
     }
@@ -33,6 +35,13 @@ export class DaysComponent implements OnInit {
 
   daysInMonth(month, year = 2017) {
     return new Date(year, month, 0).getDate();
+  }
+
+  logMessage(i: number) {
+    console.log(this.monthIdx, i);
+    const str = this.jotDown[[this.monthIdx, i].toString()] || '';
+
+    this.jotDown[[this.monthIdx, i].toString()] = str + '\n' + new Date().toString()  + ' - ' + window.prompt(str);
   }
 
   ngOnInit() {
